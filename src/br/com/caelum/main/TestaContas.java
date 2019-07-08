@@ -24,7 +24,7 @@ public class TestaContas {
 		System.out.println("Rendimento Mensal: " + c1.calculaRendimento());
 		*/
 		
-		SistemaBancario.mostraTela(false);
+		SistemaBancario.mostraTela(true);
 		//TelaDeContas.main(args);
 		
 	}

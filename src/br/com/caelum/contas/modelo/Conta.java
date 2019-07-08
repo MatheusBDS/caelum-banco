@@ -1,6 +1,6 @@
 package br.com.caelum.contas.modelo;
 
-public class Conta {
+public abstract class Conta {
 	protected String titular;
 	protected int numero;
 	protected String agencia;
@@ -54,9 +54,7 @@ public class Conta {
 		return Conta.totalDeContas;
 	}
 
-	public String getTipo() {
-		return "Conta";
-	}
+	public abstract String getTipo();
 
 	public void saca(double valor) {
 		if(valor > this.saldo) {
