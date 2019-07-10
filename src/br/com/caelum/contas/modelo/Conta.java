@@ -57,15 +57,23 @@ public abstract class Conta {
 	public abstract String getTipo();
 
 	public void saca(double valor) {
-		if(valor > this.saldo) {
-			System.out.println("Valor maior que o disponível para saque!");
+		if(valor < 0) {
+			throw new IllegalArgumentException("Você tentou sacar" + 
+												" um valor negativo!");
+		}if(valor > this.saldo) {
+			throw new SaldoInsuficienteException(valor);
 		}else {
 			this.saldo -= valor;
 		}
 	}
 
 	public void deposita(double valor) {
-		this.saldo += valor;
+		if (valor < 0) {
+			throw new IllegalArgumentException("Você tentou depositar"+
+												" um valor negativo");
+		}else {
+			this.saldo += valor;
+		}
 	}
 	
 	public double calculaRendimento() {
