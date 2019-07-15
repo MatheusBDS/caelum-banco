@@ -4,9 +4,11 @@ public class TestaSplit {
 
 	public static void main(String[] args) {
 		String frase = "Uma mensagem qualquer";
-		String[] palavras = frase.split("");
+		String[] palavras = frase.split(" ");
 		
-		System.out.println(palavras);
+		for (String x : palavras) {
+			System.out.println(x);
+		}
 	}
 
 }

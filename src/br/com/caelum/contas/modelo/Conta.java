@@ -106,7 +106,7 @@ public abstract class Conta {
 	
 	@Override
 	public String toString() {
-		return "[titular=" + titular + ", numero=" + numero 
-				+ ", agencia=" + agencia + "]";
+		return "[titular=" + this.titular + ", numero=" + this.numero 
+				+ ", agencia=" + this.agencia + "]";
 	}
 }
