@@ -1,6 +1,6 @@
 package br.com.caelum.contas.modelo;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta>{
 	protected String titular;
 	protected int numero;
 	protected String agencia;
@@ -108,5 +108,10 @@ public abstract class Conta {
 	public String toString() {
 		return "[titular=" + this.titular + ", numero=" + this.numero 
 				+ ", agencia=" + this.agencia + "]";
+	}
+	
+	@Override
+	public int compareTo(Conta outraConta) {
+		return this.titular.compareTo(outraConta.titular);
 	}
 }
