@@ -93,16 +93,6 @@ public abstract class Conta implements Comparable<Conta>{
 		conta.deposita(valor);
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		
-		Conta outraConta = (Conta) obj;
-		
-		return this.numero == outraConta.numero && this.agencia.equals(outraConta.agencia);
-	}
 	
 	@Override
 	public String toString() {
@@ -113,5 +103,33 @@ public abstract class Conta implements Comparable<Conta>{
 	@Override
 	public int compareTo(Conta outraConta) {
 		return this.titular.compareTo(outraConta.titular);
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agencia == null) ? 0 : agencia.hashCode());
+		result = prime * result + numero;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		if (agencia == null) {
+			if (other.agencia != null)
+				return false;
+		} else if (!agencia.equals(other.agencia))
+			return false;
+		if (numero != other.numero)
+			return false;
+		return true;
 	}
 }

@@ -19,18 +19,19 @@ public class TestaBanco {
 		
 		ContaPoupanca c2 = new ContaPoupanca();
 		c2.setTitular("Coringa");
-		c2.setNumero(2);
+		c2.setNumero(1);
 		c2.setAgencia("1000");
 		c2.deposita(890000);
 		banco.adiciona(c2);
 		
-		
+		/*
 		Conta c3 = new ContaCorrente();
 		c3.setTitular("EU");
 		c3.setNumero(3);
 		c3.setAgencia("1000");
 		c3.deposita(125365);
 		banco.adiciona(c3);
+		*/
 		
 		banco.mostraContas();
 		
