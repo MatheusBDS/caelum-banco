@@ -1,8 +1,5 @@
 package br.com.caelum.main;
 
-import br.com.caelum.contas.modelo.Conta;
-import br.com.caelum.contas.modelo.Data;
-import br.com.caelum.javafx.api.main.OlaMundo;
 import br.com.caelum.javafx.api.main.SistemaBancario;
 
 public class TestaContas {
